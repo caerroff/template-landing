@@ -1,8 +1,10 @@
 "use client";
 
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { LINKS } from "../../constants/links";
+import Link from "next/link";
 
 export default function Sidebar() {
     const [open, setOpen] = useState(false);
@@ -13,14 +15,14 @@ export default function Sidebar() {
                 <div className={`fixed top-0 left-0 h-full w-64 bg-slate-800 text-white transform ${open ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out z-50`} onClick={(e) => {e.preventDefault(); e.stopPropagation()}}>
                     <div className="p-4">
                         <button onClick={(e) => { e.preventDefault(); setOpen(false) }} className="mb-4 hover:cursor-pointer transition-all duration-300 ease-in-out hover:text-orange-300 dark:hover:text-orange-500">
-
-                            Close
+                            <FontAwesomeIcon icon={faClose} /> Close
                         </button>
                         <nav className="flex flex-col space-y-4">
-                            <a href="#" className="hover:underline">Home</a>
-                            <a href="#" className="hover:underline">About</a>
-                            <a href="#" className="hover:underline">Services</a>
-                            <a href="#" className="hover:underline">Contact</a>
+                            {LINKS.map((link, index) => {
+                                return (
+                                    <Link key={index} href={link.href} className="hover:text-orange-500 transition-all duration-300 ease-in-out text-xl">{link.icon} {link.label}</Link>
+                                )
+                            })}
                         </nav>
                     </div>
                 </div>

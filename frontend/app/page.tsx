@@ -2,7 +2,7 @@ import Image from "next/image";
 import Banner from "./src/components/Banner";
 import Card from "./src/components/ui/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus, faQuestion, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { products } from "./src/content/Products";
 import Link from "next/link";
 

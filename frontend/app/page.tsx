@@ -27,7 +27,7 @@ export default function Home() {
             />
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
               <div className="flex justify-center gap-2 py-2">
                 <Link href={item.buyUrl} target="_blank" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"><FontAwesomeIcon icon={faCartPlus} /> Buy Now</Link>
                 <Link href={`/products/${item.id}`} className="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition"><FontAwesomeIcon icon={faQuestionCircle} /> Learn More</Link>
@@ -50,7 +50,7 @@ export default function Home() {
             />
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">News {item}</h3>
-              <p className="text-gray-600">This is a brief description of News {item}.</p>
+              <p className="text-gray-600 dark:text-gray-300">This is a brief description of News {item}.</p>
             </div>
           </Card>
         ))}
